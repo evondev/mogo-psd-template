@@ -1,0 +1,109 @@
+mixin menuLink(title, href = "#")
+	li.header-menu-item
+		a.header-menu-link(href= href)= title
+
+mixin headerBottomItem(number, title)
+	.header-bottom-item
+		span.header-bottom-number= number
+		span.header-bottom-text= title
+
+mixin blockBox(caption, title, desc)
+	.block-box
+		h3.block-box-caption= caption
+		h2.block-box-heading= title
+		if desc
+			p.block-box-desc= desc
+//- data = {src: "", alt: "", icon: "", title: ""} -> data.src
+mixin aboutItem(data)
+	.about-item
+		img.about-image(src= data.src, alt= data.alt)
+		.about-content
+			i.about-icon(class= data.icon)
+			span.about-title= data.title
+
+mixin serviceItem(src, title, desc)
+	.service-item
+		img.service-item-icon(src= src)
+		.service-item-info
+			h3.service-item-title= title
+			p.service-item-desc= desc
+
+mixin wedoItem(src, title, desc, active = "")
+	.wedo-item(class= active)
+		.wedo-item-header
+			img(src= src).wedo-item-icon
+			h3.wedo-item-title= title
+			i.fal.fa-angle-up.wedo-item-arrow
+		.wedo-item-content
+			.wedo-item-text= desc
+
+mixin teamSocial(facebook = "#", twitter = "#", pinterest = "#", instagram = "#")
+	ul.team-social
+		li.team-social-item
+			a.team-social-link(href= facebook)
+				i.fab.fa-facebook-f
+		li.team-social-item
+			a.team-social-link(href= twitter)
+				i.fab.fa-twitter
+		li.team-social-item
+			a.team-social-link(href= pinterest)
+				i.fab.fa-pinterest
+		li.team-social-item
+			a.team-social-link(href= instagram)
+				i.fab.fa-instagram
+
+mixin teamItem(src = "./images/img-team.jpg", name = "Christopher John", position = "Frontend Developer")
+	.team-item
+		.team-main
+			img(src= src).team-image
+			.team-content
+				if block
+					block
+		.team-info
+			h3.team-name= name
+			span.team-position= position
+
+mixin workItem(src = "./images/img-work1.png", icon = "fa fa-home", title = "Photographer Super", full = "", desc = "Lorem ipsum dolor sit")
+	.work-item(class= full)
+		img.work-image(src= src)
+		.work-content
+			i.work-icon(class= icon)
+			h3.work-title= title
+			span.work-desc.text.text--light= desc
+
+mixin peopleItem(src="https://images.unsplash.com/photo-1533227268428-f9ed0900fb3b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1179&q=80", name = "EvonDev", job = "Graphic Design", desc = "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus dignissimos quia pariatur quis modi doloremque consequatur facilis consequuntur. Fuga ea eius dignissimos porro animi, amet voluptatibus illo officiis eum numquam?")
+	li.people-item
+		img.people-avatar(src= src)
+		.people-info
+			h3.people-name= name
+			span.people-job.text.text--light= job
+			p.people-desc.text= desc
+
+mixin storyItem(src="./images/img-blog1.png", dateNumber = 15, dateText = "Jan", title="Lorem ipsum dolor sit amet consectetur adipisicing elit.", desc = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde quidem nihil reprehenderit repudiandae aliquam, debitis magnam animi esse ipsam soluta non voluptas repellendus laboriosam totam sunt doloremque distinctio labore quas?", views = 1000, comments = 100)
+	li.story-item
+		.story-media
+			img.story-image(src= src)
+			.story-date
+				span.story-date-number= dateNumber
+				span.story-date-text.text.text--light= dateText
+		h3.story-title= title
+		.story-desc.text
+			p.story-desc-inner= desc
+		.story-meta
+			.story-meta-item
+				i.fa.fa-eye.story-meta-icon
+				span.story-meta-number.text= views
+			.story-meta-item
+				i.fa.fa-comment.story-meta-icon
+				span.story-meta-number.text= comments
+
+mixin quoteItem(src = "../images/img-quote.png", type = false, desc = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi doloremque a perspiciatis minus pariatur itaque voluptas illum delectus necessitatibus, tempora sapiente nobis cupiditate, ipsum fugiat quos, rem ea enim reiciendis!", author = "Jon Doe")
+	.quote-item
+		if type == false
+			.quote-icon
+				img(src= src)
+		else
+			img(src= src).quote-image
+		.quote-info
+			p.quote-desc= desc
+			span.quote-author= author

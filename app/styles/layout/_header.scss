@@ -1,0 +1,212 @@
+.header {
+  min-height: 100rem;
+  background: linear-gradient(
+      to bottom,
+      rgba($primary-color, 0.8),
+      rgba($secondary-color, 0.8)
+    ),
+    url("../images/img-header-bg.jpg") no-repeat center / cover;
+  color: white;
+  &-logo {
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+  }
+  &-toggle {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+  &-menu-link {
+    text-transform: uppercase;
+    display: inline-block;
+    transition: all 0.25s linear;
+  }
+  &-menu-icon {
+    color: white;
+  }
+  &-top {
+    padding-top: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  &-menu {
+    display: flex;
+  }
+
+  &-content {
+    padding-top: 17rem;
+    text-align: center;
+    max-width: 80rem;
+    margin: 0 auto;
+  }
+  &-content-caption {
+    font-size: 7.2rem;
+    font-family: $third-font;
+    margin-bottom: 3rem;
+  }
+  &-content-main {
+    font-size: 15rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-bottom: 5rem;
+    margin-bottom: 5rem;
+    position: relative;
+    &:after {
+      content: "";
+      bottom: 0;
+      @include absoluteCenter();
+      width: 6rem;
+      height: 0.5rem;
+      background-color: #fff;
+    }
+  }
+  &-content-more {
+    text-transform: uppercase;
+    color: white;
+    padding: 1rem 3rem;
+    border: 4px solid white;
+    font-weight: bold;
+    display: inline-block;
+  }
+  &-bottom {
+    margin-top: 15.5rem;
+    padding-bottom: 2.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    &-item {
+      padding-top: 2.5rem;
+      border-top: 5px solid white;
+      width: calc(25% - 30px);
+      margin-left: 30px;
+      opacity: 0.6;
+      position: relative;
+      cursor: pointer;
+      transition: all 0.2s linear;
+    }
+    &-item:before {
+      content: "";
+      @include size(7rem, 5px);
+      background-color: $primary-color;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateY(-100%);
+      opacity: 0;
+      transition: all 0.2s linear;
+    }
+    &-item:hover,
+    &-item.is-active {
+      opacity: 1;
+      &:before {
+        opacity: 1;
+      }
+    }
+    &-number {
+      font-weight: bold;
+      font-size: 2.4rem;
+    }
+    &-text {
+      margin-left: 10px;
+      text-transform: uppercase;
+      font-size: 1.8rem;
+    }
+  }
+  @include minWidth(768px) {
+    &-menu-item:not(:first-child) {
+      margin-left: 5rem;
+    }
+    &-menu-link {
+      color: white;
+      display: inline-block;
+      padding-bottom: 1rem;
+      border-bottom: 4px solid transparent;
+    }
+    &-menu-link:hover {
+      color: $secondary-color;
+      border-bottom-color: $secondary-color;
+    }
+  }
+  @include maxWidth(1023px) {
+    min-height: unset;
+    .header-bottom {
+      margin-top: 10.5rem;
+    }
+    .header-content {
+      padding-top: 10rem;
+    }
+    .header-content-main {
+      font-size: 10rem;
+    }
+  }
+  @include maxWidth(767px) {
+    .header-bottom-text {
+      display: none;
+    }
+    .header-content-caption {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .header-content-main {
+      font-size: 5rem;
+      margin-bottom: 3rem;
+      padding-bottom: 3rem;
+    }
+    .header-bottom-item {
+      text-align: center;
+      padding-top: 1.5rem;
+    }
+    .header-bottom-item:before {
+      width: 35%;
+    }
+    .header-bottom {
+      margin-top: 5rem;
+    }
+    .header-content {
+      padding-top: 5rem;
+    }
+    .header-menu {
+      position: fixed;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-color: white;
+      width: 300px;
+      display: block;
+      padding: 20px 25px;
+      z-index: 10;
+      transform: translateX(100%);
+      transition: transform 0.25s ease-in;
+    }
+    .header-menu.is-expand {
+      transform: translateX(0);
+    }
+    .header-menu-item {
+      margin-bottom: 1rem;
+    }
+    .header-menu-icon {
+      display: block;
+      color: $title-color;
+      padding: 15px;
+      &:hover {
+        color: $primary-color;
+      }
+    }
+
+    .header-menu-link {
+      color: $title-color;
+      width: 100%;
+      padding: 15px;
+      border-radius: 4px;
+      &:hover {
+        color: white;
+        background-color: $secondary-color;
+      }
+    }
+    .header-toggle {
+      display: inline-block;
+      align-self: center;
+    }
+  }
+}

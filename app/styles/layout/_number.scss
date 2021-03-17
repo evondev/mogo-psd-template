@@ -1,0 +1,56 @@
+.number {
+  @include bg($third-color);
+  &-list {
+    @include flexbox;
+  }
+  &-item {
+    padding: 8.5rem 3.5rem;
+    color: white;
+    border-left: 1px solid white;
+    text-align: center;
+    text-transform: uppercase;
+    width: 20%;
+  }
+  &-item:last-child {
+    border-right: 1px solid white;
+  }
+  &-item-count {
+    font-size: 7.2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+  &-item-text {
+    line-height: 1.4;
+  }
+  @include maxWidth(1023px) {
+    &-item {
+      padding: 5rem 1.5rem;
+    }
+    &-item-count {
+      font-size: 5rem;
+      margin-bottom: 1rem;
+    }
+    &-item-text {
+      font-size: 1.4rem;
+    }
+  }
+  @include maxWidth(767px) {
+    &-list {
+      display: block;
+    }
+    &-item {
+      width: 100%;
+      padding: 2.5rem 1.5rem;
+      border-left: 0;
+    }
+    &-item:not(:last-child) {
+      border-bottom: 1px solid white;
+    }
+    // &-item:not(:nth-child(999)) {
+    //   border-right: 0;
+    // }
+    &-item:last-child {
+      border-right: 0;
+    }
+  }
+}

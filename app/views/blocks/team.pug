@@ -1,0 +1,13 @@
+section.team
+  .container
+    +blockBox("Who we are", "Meet our team", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque veniam libero optio. Atque necessitatibus voluptate explicabo suscipit excepturi numquam dignissimos corporis molestiae dolorum laudantium veritatis, voluptas aliquid perspiciatis expedita praesentium!")
+    .team-list
+      +teamItem("./images/img-team1.png", "Matthew Dix", "Graphic Design")
+        +teamSocial("#evondev")
+      +teamItem("./images/img-team2.png", "Christopher Cambell", "Branding UX/design")
+        +teamSocial("#chris")
+      +teamItem("./images/img-team3.png", "Michael Fertig", "Developer")
+        +teamSocial("#hand")
+section.brand
+  .container
+    img(src="./images/img-logos.png" alt="brands")

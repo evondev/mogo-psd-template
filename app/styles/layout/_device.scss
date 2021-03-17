@@ -1,0 +1,26 @@
+.device {
+  padding-top: 11rem;
+  background: linear-gradient(to bottom, rgba(white, 0.7), rgba(white, 0.6)),
+    url("../images/img-device-bg.png") no-repeat center / cover;
+  // &-media {
+  //   text-align: center;
+  // }
+  &-image {
+    margin: 0 auto -9.3rem;
+    display: inline-block;
+    @include absoluteCenter("left", relative);
+  }
+  @include maxWidth(767px) {
+    padding-top: 5rem;
+    &-image {
+      max-width: 80%;
+      margin-bottom: -4.6rem;
+    }
+  }
+  @include maxWidth(413px) {
+    &-image {
+      max-width: 80%;
+      margin-bottom: -4.2rem;
+    }
+  }
+}
