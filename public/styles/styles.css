@@ -278,7 +278,6 @@ button {
     .header .header-toggle {
       display: inline-block;
       -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
       align-self: center; } }
 
 .about {
@@ -286,9 +285,7 @@ button {
   padding-bottom: 11rem;
   background-color: white; }
   .about-list {
-    display: -ms-grid;
     display: grid;
-    -ms-grid-columns: (1fr)[3];
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 3rem; }
   .about-content {
@@ -320,7 +317,6 @@ button {
       .about-list {
         grid-auto-columns: 80%;
         grid-auto-flow: column;
-        -ms-grid-columns: unset;
         grid-template-columns: unset;
         grid-row-gap: 2.5rem;
         overflow-x: auto;
@@ -896,14 +892,12 @@ button {
     .team {
       padding: 5rem 0; }
       .team-list {
-        display: -ms-grid !important;
         display: grid !important;
         -webkit-box-pack: start !important;
         -ms-flex-pack: start !important;
         justify-content: flex-start !important;
         grid-auto-columns: 55%;
         grid-auto-flow: column;
-        -ms-grid-columns: unset;
         grid-template-columns: unset;
         grid-column-gap: 2.5rem;
         overflow-x: auto;
@@ -922,14 +916,12 @@ button {
     .team {
       --image-height: 40rem; }
       .team-list {
-        display: -ms-grid !important;
         display: grid !important;
         -webkit-box-pack: start !important;
         -ms-flex-pack: start !important;
         justify-content: flex-start !important;
         grid-auto-columns: 90%;
         grid-auto-flow: column;
-        -ms-grid-columns: unset;
         grid-template-columns: unset;
         grid-column-gap: 2.5rem;
         overflow-x: auto;
@@ -1081,39 +1073,23 @@ button {
         height: auto; } }
 
 .work-grid {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[4];
   grid-template-columns: repeat(4, 1fr);
-  -ms-grid-rows: 30rem 30rem;
   grid-template-rows: 30rem 30rem;
   grid-template-areas: "h1 h3 h5 h6" "h2 h4 h5 h7"; }
   .work-grid .work-item {
     height: 100% !important; }
     .work-grid .work-item:last-child {
-      -ms-grid-row: 2;
-      -ms-grid-column: 4;
       grid-area: h7; }
     .work-grid .work-item:nth-child(2) {
-      -ms-grid-row: 2;
-      -ms-grid-column: 1;
       grid-area: h2; }
     .work-grid .work-item:nth-child(3) {
-      -ms-grid-row: 1;
-      -ms-grid-column: 2;
       grid-area: h3; }
     .work-grid .work-item:nth-child(4) {
-      -ms-grid-row: 2;
-      -ms-grid-column: 2;
       grid-area: h4; }
     .work-grid .work-item:nth-child(5) {
-      -ms-grid-row: 1;
-      -ms-grid-row-span: 2;
-      -ms-grid-column: 3;
       grid-area: h5; }
     .work-grid .work-item:nth-child(6) {
-      -ms-grid-row: 1;
-      -ms-grid-column: 4;
       grid-area: h6; }
   @media screen and (max-width: 767px) {
     .work-grid {

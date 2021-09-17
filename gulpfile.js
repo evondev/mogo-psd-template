@@ -69,7 +69,7 @@ function styles() {
       autoprefixer({
         browsers: ["last 2 versions"],
         cascade: false,
-        grid: true,
+        grid: false,
       })
     )
     .pipe(gulp.dest(options.styles.dest))
